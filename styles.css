@@ -72,3 +72,24 @@ button, .card {
     padding: 0%;
     flex-grow: 1;
 }
+
+.center {
+    text-align: center;
+}
+
+table {
+    margin: 10px;
+    width: 100%;
+    border: red;
+}
+th, td {
+    /* display: none; */
+    border: 1px solid black;
+    /* width: 50%; */
+    padding: 10px;
+    text-align: center;
+}
+
+#tbody {
+    display: none;
+}

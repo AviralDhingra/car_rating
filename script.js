@@ -81,19 +81,13 @@ start.addEventListener("click", () => {
 stop.addEventListener("click", () => {
   container.style.display = "none";
   stop.style.display = "none";
+  tbody.style.display = "block";
 
   ratings = JSON.parse(sessionStorage.ratings);
-  for (let i = 0; i < ratings.length; i++) {
+  // console.log(ratings);
+  for (let i = 0; i < Object.keys(ratings).length; i++) {
       let tr = "<tr>";
-
-      /* Verification to add the last decimal 0 */
-      if (ratings[i].value.toString().substring(ratings[i].value.toString().indexOf('.'), ratings[i].value.toString().length) < 2) 
-          ratings[i].value += "0";
-
-      /* Must not forget the $ sign */
-      tr += "<td>" + ratings[i].key.toString() + "</td>" + "<td>" + ratings[i].value.toString() + "</td></tr>";
-
-      /* We add the table row to the table body */
+      tr += "<td>" + Object.keys(ratings)[i] + "</td>" + "<td>" + Object.values(ratings)[i] + "</td></tr>";
       tbody.innerHTML += tr;
   }
 });
